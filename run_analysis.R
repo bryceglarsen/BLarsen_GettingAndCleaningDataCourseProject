@@ -59,9 +59,9 @@ for (i in 1:length(keyfeatures$featurelabel)) {
 }
 
 #Step 5: Create a second, independent tidy data set with the average of each variable for each activity and each subject.
-data4 <- data3[,!(names(data3) %in% "activitylabel")]
 
 #Calculate mean of each feature for each subject
-tidydataset <- aggregate(. ~subjectid + activityid, data4, mean)
+tidydataset <- aggregate(. ~subjectid + activityid + activitylabel, data3, mean)
+
 #Write to file
 write.table(tidydataset, "tidydataset.csv", row.names = FALSE)
