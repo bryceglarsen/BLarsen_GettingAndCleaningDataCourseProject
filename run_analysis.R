@@ -64,4 +64,4 @@ for (i in 1:length(keyfeatures$featurelabel)) {
 tidydataset <- aggregate(. ~subjectid + activityid + activitylabel, data3, mean)
 
 #Write to file
-write.table(tidydataset, "tidydataset.csv", row.names = FALSE)
+write.csv(tidydataset, "tidydataset.csv", row.names = FALSE)
