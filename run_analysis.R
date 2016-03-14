@@ -63,5 +63,7 @@ for (i in 1:length(keyfeatures$featurelabel)) {
 #Calculate mean of each feature for each subject
 tidydataset <- aggregate(. ~subjectid + activityid + activitylabel, data3, mean)
 
-#Write to file
+#Write to csv file
 write.csv(tidydataset, "tidydataset.csv", row.names = FALSE)
+#Write to txt file
+write.table(tidydataset, "tidydataset.txt", row.names = FALSE)
